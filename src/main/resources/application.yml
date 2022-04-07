@@ -5,7 +5,7 @@ spring:
       security:
         protocol: SASL_SSL
       bootstrap:
-        servers: pkc-ldjyd.southamerica-east1.gcp.confluent.cloud:9092
+        servers: ${SERVER}
       sasl:
         mechanism: PLAIN
         jaas:
