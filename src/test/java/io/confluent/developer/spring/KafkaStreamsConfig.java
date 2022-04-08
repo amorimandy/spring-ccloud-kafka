@@ -42,7 +42,9 @@ public class KafkaStreamsConfig {
                 .reduce((String value1, String value2) -> value1 + value2, Named.as("windowStore"))
                 .toStream()
                 .map((windowedId, value) -> new KeyValue<>(windowedId.key(), value))
+                .filter((i, s) -> s.length() > 40)
                 .to("streamingTopic2");
+
         stream.print(Printed.toSysOut());
 
         return stream;

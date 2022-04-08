@@ -1,6 +1,9 @@
 # Kafka
 spring:
   kafka:
+    streams:
+      application-id: spring-boot-streams
+      replication-factor: 3
     properties:
       security:
         protocol: SASL_SSL
@@ -16,5 +19,5 @@ spring:
     consumer:
       group-id: group_id
       auto-offset-reset: earliest
-      key-deserializer: org.apache.kafka.common.serialization.IntegerDeserializer
-      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.LongDeserializer
